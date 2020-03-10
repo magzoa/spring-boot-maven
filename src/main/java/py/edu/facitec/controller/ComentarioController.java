@@ -27,7 +27,7 @@ public class ComentarioController {
 	private ComentarioRepository repository;
 	
 	
-	@GetMapping(value = "/lista")
+	@GetMapping
 	public List<Comentario> getComentarios(){
 		
 	return	repository.findAll();
