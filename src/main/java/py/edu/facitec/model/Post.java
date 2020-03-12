@@ -32,7 +32,7 @@ public class Post extends General{
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private LocalDate fecha;
 	@NotBlank
-	@Lob
+//	@Lob
 	private String texto;
 	
 	@OneToMany(mappedBy = "post")

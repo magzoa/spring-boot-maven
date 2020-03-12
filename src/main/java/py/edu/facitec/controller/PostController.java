@@ -30,7 +30,7 @@ public class PostController extends GenericController<Post, Long>{
 	
 	@GetMapping("/autor/{autor}")
 	public List<Post> buscarPorNome(@PathVariable("autor") String autor) {
-		return postRepository.findByAutorContaining(autor);
+		return postRepository.findByAutor(autor);
 	}
 	
 	
