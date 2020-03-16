@@ -8,15 +8,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
-public class Suscrito {
+
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
+
+public class Suscrito extends General{
 	
 	
 	
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long codigo;
 	private String nombre;
 	private String correo;
 	
@@ -26,12 +31,7 @@ public class Suscrito {
 	
 	
 	
-	public Long getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
-	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -50,6 +50,12 @@ public class Suscrito {
 	public void setComentarios(List<Comentario> comentarios) {
 		this.comentarios = comentarios;
 	}
+	@Override
+	public String toString() {
+		return "Suscrito [nombre=" + nombre + ", correo=" + correo + "]";
+	}
+	
+
 	
 	
 	

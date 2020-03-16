@@ -1,5 +1,5 @@
 package py.edu.facitec;
-
+/*
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,4 +39,4 @@ public class JWTConfig extends WebSecurityConfigurerAdapter {
            .formLogin().disable();
 	}
 	
-}
+}*/

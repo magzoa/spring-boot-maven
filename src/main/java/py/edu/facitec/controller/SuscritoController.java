@@ -37,6 +37,9 @@ public class SuscritoController {
 	@PostMapping
 	public Suscrito save(@RequestBody Suscrito suscrito) {
 		
+		System.out.println("Suscrito registrado"+suscrito);
+		
+		
 	return	repository.save(suscrito);
 	}
 	
