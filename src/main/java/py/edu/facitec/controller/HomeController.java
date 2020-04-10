@@ -6,15 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	
-//	@RequestMapping("/")
-//	public String index() {
-//		
-//		return "index";
-//	}
 
 	
-	//URL  a responder
 	@RequestMapping("/")
 	public String index() {
 		

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="app">
+
+<h1>{{titulo}}</h1>
+
+<input type="text" v-model="nuevaFruta">
+<button @click="agregarFruta">Agregar</button>
+
+
+
+<ul>
+<li v-for="fruta of frutas">
+{{fruta.cantidad}}-{{fruta.nombre}}
+
+<span v-if="fruta.cantidad===0">- Sin Stock</span>
+
+
+</li>
+
+
+
+</ul>
+
+
+
+</div>
+
+<script type="text/javascript" src="../../lib/vue.js"></script>
+
+<script type="text/javascript" src="formulario.js"></script>
+
+
+</body>
+</html>

@@ -11,14 +11,13 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 //@Table(name = "TB_POST")
 
-@JsonIdentityInfo(
-		  generator = ObjectIdGenerators.PropertyGenerator.class, 
-		  property = "id")
+
 public class Post extends General{
 	
 	//Date input = new Date();
@@ -35,6 +34,7 @@ public class Post extends General{
 //	@Lob
 	private String texto;
 	
+	@JsonManagedReference(value = "variable")
 	@OneToMany(mappedBy = "post")
 	private List<Comentario> comentarios;
 	
