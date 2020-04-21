@@ -1,5 +1,5 @@
 package py.edu.facitec.filter;
-/*
+
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -34,4 +34,4 @@ public class JWTFilter extends GenericFilterBean {
 	}
 
 }
-*/
+

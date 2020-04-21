@@ -1,8 +1,9 @@
 package py.edu.facitec;
-/*
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -33,10 +34,11 @@ public class JWTConfig extends WebSecurityConfigurerAdapter {
 		.and()
 		   .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
 		.authorizeRequests()
-		   .antMatchers("/**").permitAll()  
+		   .antMatchers(HttpMethod.GET,"/").permitAll()
+		   .antMatchers(HttpMethod.GET,"/archivo/**").permitAll()
 		   .anyRequest().authenticated()
 	    .and()
            .formLogin().disable();
 	}
 	
-}*/
+}
