@@ -56,6 +56,10 @@
                                                 class="btn btn-danger">
                                                 Cancelar
                                             </button>
+                                            <button type="button" @click="cerrar()"
+                                                class="btn btn-danger">
+                                                Cerrar Sesion
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -91,6 +95,7 @@
                                             class="btn btn-danger">
                                                 Eliminar
                                             </button>
+                                            
                                         </td>
                                     </tr>
                                 </tbody>
@@ -124,6 +129,16 @@
                 	suscritos:[],
                 
                 
+            },
+            created(){
+            	
+     
+            	console.log(localStorage.getItem("token"));
+     Vue.axios.defaults.headers.common['Authorization'] ='Bearer '+ localStorage.getItem("token");
+     
+     
+     
+     
             },
             mounted() {
                 
@@ -177,6 +192,10 @@
                 },
                 cancelar(){
                 	this.suscrito={};
+                },cerrar(){
+                	localStorage.removeItem('token');
+                	
+                	window.location='/';
                 }
             }
         });

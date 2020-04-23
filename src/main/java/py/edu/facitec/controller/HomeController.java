@@ -13,6 +13,14 @@ public class HomeController {
 		
 		
 		System.out.println("Cargando página de inicio");
-	    return "index";
+	    return "usuario/login";
+	}
+	
+	@RequestMapping("/form")
+	public String suscritos() {
+		
+		
+		System.out.println("Cargando página de suscritos");
+	    return "suscrito/form-ajax";
 	}
 }

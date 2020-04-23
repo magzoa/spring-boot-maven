@@ -14,49 +14,45 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import py.edu.facitec.model.Suscrito;
-import py.edu.facitec.repository.SuscritoRepository;
+import py.edu.facitec.model.Usuario;
+import py.edu.facitec.repository.UsuarioRepository;
 
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/suscritos")
+@RequestMapping("/usuarios")
 
-public class SuscritoController {
+public class UsuarioController {
 	
 	@Autowired
-	private SuscritoRepository repository;
-	
-	
-	
-	
+	private UsuarioRepository repository;
 	
 	
 	@GetMapping
-	public List<Suscrito> getSuscritos(){
+	public List<Usuario> getUsuarios(){
 		
 	return	repository.findAll();
 		
 	}
 	
 	@PostMapping
-	public Suscrito save(@RequestBody Suscrito suscrito) {
+	public Usuario save(@RequestBody Usuario usuario) {
 		
-		System.out.println("Suscrito registrado"+suscrito);
+		System.out.println("Usuario registrado"+usuario);
 		
 		
-	return	repository.save(suscrito);
+	return	repository.save(usuario);
 	}
 	
 	
 	
 	@PutMapping
-	public Suscrito update(@RequestBody Suscrito suscrito) {
+	public Usuario update(@RequestBody Usuario usuario) {
 		
-		return repository.save(suscrito);
+		return repository.save(usuario);
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Suscrito> getSuscritoForId(@PathVariable Long id){
+	public Optional<Usuario> getUsuarioForId(@PathVariable Long id){
 		
 		return repository.findById(id);
 		
@@ -64,9 +60,9 @@ public class SuscritoController {
 	}
 	
 	@DeleteMapping
-	public void deleteSuscrito(@RequestBody Suscrito suscrito){
+	public void deleteUsuario(@RequestBody Usuario usuario){
 		
-		 repository.delete(suscrito);
+		 repository.delete(usuario);
 		
 	}
 	

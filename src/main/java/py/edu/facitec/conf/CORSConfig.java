@@ -1,4 +1,4 @@
-package py.edu.facitec;
+package py.edu.facitec.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

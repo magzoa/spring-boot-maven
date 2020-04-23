@@ -59,6 +59,10 @@
                                                 class="btn btn-danger">
                                                 Cancelar
                                             </button>
+                                            <button type="button" @click="cerrar()"
+                                                class="btn btn-danger">
+                                                Cerrar Sesion
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -180,6 +184,9 @@
                 },
                 cancelar(){
                 	this.suscrito={};
+                },cerrar(){
+                	localStorage.removeItem('token');
+                	window.location('/');
                 }
             }
         });
